@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uday Chauhan | Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --card-alt:#eef1f8;
+  --border:rgba(14,26,61,0.08);
+  --blue:#2f5bff;
+  --blue-soft:rgba(47,91,255,0.10);
+  --text:#0e1a3d;
+  --text-dim:#57628a;
+  --text-faint:#94a0bf;
+  --green:#16a34a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+a{color:inherit;text-decoration:none;}
+.page{display:none;min-height:100vh;}
+.page.active{display:block;}
+.about-card,.skill-card,.prof-card,.impact-card,.list-card,.contact-band,.detail-box,.result-box{box-shadow:0 10px 30px rgba(14,26,61,0.06);}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2.5rem;max-width:1180px;margin:0 auto;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;}
+.logo{display:flex;align-items:center;gap:9px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.01em;cursor:pointer;color:var(--text);}
+.logo-mark{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--blue),#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;}
+.nav-links{display:flex;gap:2.2rem;}
+.nav-link{font-size:12.5px;font-weight:500;color:var(--text-dim);letter-spacing:0.03em;cursor:pointer;transition:color 0.2s;}
+.nav-link:hover,.nav-link.active{color:var(--text);}
+.nav-cta{background:var(--blue);color:#fff;font-size:12px;font-weight:600;padding:9px 20px;border-radius:22px;cursor:pointer;transition:background 0.2s;white-space:nowrap;}
+.nav-cta:hover{background:#2563eb;}
+
+/* HERO */
+.hero{max-width:1180px;margin:0 auto;padding:3rem 2.5rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;}
+.hero-eyebrow{font-size:16px;color:var(--text-dim);margin-bottom:2px;font-weight:400;}
+.hero-name{font-size:46px;font-weight:800;color:var(--blue);letter-spacing:-0.02em;line-height:1.05;margin-bottom:14px;}
+.hero-role{font-size:15px;font-weight:600;color:var(--text);margin-bottom:10px;}
+.hero-sub{font-size:13.5px;color:var(--text-dim);max-width:420px;line-height:1.6;margin-bottom:22px;}
+.hero-btn{display:inline-block;background:var(--blue);color:#fff;font-size:12.5px;font-weight:600;padding:11px 26px;border-radius:24px;cursor:pointer;transition:transform 0.15s,background 0.2s;}
+.hero-btn:hover{background:#2563eb;transform:translateY(-1px);}
+.hero-photo{position:relative;flex-shrink:0;width:190px;height:190px;}
+.hero-photo::before{content:'';position:absolute;inset:-14px;border-radius:50%;background:var(--blue-soft);z-index:0;}
+.hero-photo img{position:relative;z-index:1;width:190px;height:190px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--card);}
+.status-chip{position:absolute;z-index:2;bottom:6px;right:2px;background:var(--green);color:#062b12;font-size:9.5px;font-weight:700;padding:4px 9px;border-radius:12px;font-family:'JetBrains Mono',monospace;letter-spacing:0.03em;border:2px solid var(--bg);}
+
+/* ============ WIX-STYLE LIGHT HERO ============ */
+.hero-wrap{position:relative;background:#f7f8fb;overflow:hidden;}
+.nav2{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:1.3rem 2.5rem;}
+.nav2-brand{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.nav2-mark{width:30px;height:30px;flex-shrink:0;}
+.nav2-name{font-family:'Fredoka',sans-serif;font-size:16px;font-weight:600;color:#0e1a3d;letter-spacing:-0.01em;line-height:1.2;}
+.nav2-title{font-size:9px;font-weight:700;color:#5b6b8c;letter-spacing:0.13em;}
+.nav2-links{display:flex;gap:2.4rem;}
+.navlink2{position:relative;font-size:11.5px;font-weight:700;letter-spacing:0.08em;color:#33405e;cursor:pointer;padding-bottom:4px;}
+.navlink2::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:#2f5bff;transition:width 0.25s ease;}
+.navlink2:hover::after{width:100%;}
+.navlink2:hover{color:#0e1a3d;}
+@media(max-width:760px){.nav2-links{display:none;}}
+
+.hero2{position:relative;max-width:1180px;margin:0 auto;padding:2.2rem 2.5rem 5.5rem;}
+.hero2-diagonal{position:absolute;top:-40px;left:0;bottom:-40px;width:380px;max-width:38%;z-index:0;background:linear-gradient(155deg,#0c1638,#152a63 55%,#1c3585);clip-path:polygon(0 0,100% 0,52% 100%,0 100%);overflow:hidden;}
+.hero2-diagonal .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:0.35;animation:blobfloat 9s ease-in-out infinite;}
+.hero2-diagonal .blob1{width:120px;height:120px;background:#2f5bff;top:12%;left:18%;animation-delay:0s;}
+.hero2-diagonal .blob2{width:70px;height:70px;background:#5b8dff;bottom:18%;left:10%;animation-delay:2.4s;}
+.hero2-diagonal .blob3{width:46px;height:46px;background:#8fb3ff;top:52%;left:34%;animation-delay:4.8s;}
+@keyframes blobfloat{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(10px,-16px) scale(1.12);}}
+
+.hero2-grid{position:relative;z-index:2;display:grid;grid-template-columns:300px 1fr;gap:4.5rem;align-items:center;padding-top:2rem;}
+.photo-card{background:#fff;border-radius:16px;padding:1.9rem 1.6rem 1.6rem;text-align:center;box-shadow:0 25px 55px rgba(14,26,61,0.28);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1),box-shadow 0.45s;animation:cardIn 0.9s cubic-bezier(0.16,1,0.3,1) both;}
+.photo-card:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 38px 70px rgba(14,26,61,0.38);}
+@keyframes cardIn{from{opacity:0;transform:translateY(28px) scale(0.96);}to{opacity:1;transform:translateY(0) scale(1);}}
+.photo-circle{width:118px;height:118px;border-radius:50%;overflow:hidden;margin:0 auto 16px;border:4px solid #fff;box-shadow:0 0 0 3px #eef1fa,0 10px 24px rgba(14,26,61,0.25);}
+.photo-circle img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.photo-card h3{font-family:'Fredoka',sans-serif;font-size:19px;font-weight:600;color:#0e1a3d;line-height:1.3;margin-bottom:4px;}
+.photo-card .p-title{font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6a7796;text-transform:uppercase;margin-bottom:16px;}
+.photo-social{display:flex;justify-content:center;gap:10px;padding-top:15px;border-top:1px solid #eef0f5;}
+.photo-social a{width:32px;height:32px;border-radius:50%;background:#0e1a3d;display:flex;align-items:center;justify-content:center;color:#fff;transition:background 0.2s,transform 0.2s;}
+.photo-social a:hover{background:#2f5bff;transform:translateY(-3px);}
+
+.hero2-text{animation:textIn 0.9s 0.15s cubic-bezier(0.16,1,0.3,1) both;}
+@keyframes textIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.hero2-hello{font-family:'Fredoka',sans-serif;font-size:58px;font-weight:600;color:#2f5bff;letter-spacing:-0.02em;line-height:1;margin-bottom:14px;position:relative;display:inline-block;}
+.hero2-hello::after{content:'';position:absolute;left:2px;bottom:-6px;width:64px;height:5px;border-radius:3px;background:linear-gradient(90deg,#2f5bff,#8fb3ff);}
+.hero2-role{font-size:16px;font-weight:700;color:#0e1a3d;margin:18px 0 14px;line-height:1.4;}
+.hero2-desc{font-size:13.5px;color:#57628a;line-height:1.85;max-width:480px;margin-bottom:26px;}
+.hero2-btns{display:flex;gap:14px;margin-bottom:8px;}
+.hbtn{font-size:12px;font-weight:700;letter-spacing:0.04em;padding:13px 30px;border-radius:26px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s,background 0.2s;}
+.hbtn-fill{background:#0e1a3d;color:#fff;box-shadow:0 10px 24px rgba(14,26,61,0.25);}
+.hbtn-fill:hover{background:#2f5bff;transform:translateY(-3px);box-shadow:0 14px 30px rgba(47,91,255,0.35);}
+.hbtn-outline{background:#fff;color:#0e1a3d;border:1.5px solid #0e1a3d;}
+.hbtn-outline:hover{background:#0e1a3d;color:#fff;transform:translateY(-3px);}
+.hero2-scrollcue{position:absolute;left:2.5rem;bottom:14px;font-size:10px;color:#8b96b8;display:flex;align-items:center;gap:8px;z-index:2;}
+.scrollcue-dot{width:22px;height:34px;border:2px solid #c7cee3;border-radius:14px;position:relative;flex-shrink:0;}
+.scrollcue-dot::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:4px;height:8px;border-radius:2px;background:#2f5bff;animation:scrollpulse 1.6s ease-in-out infinite;}
+@keyframes scrollpulse{0%{opacity:1;transform:translate(-50%,0);}100%{opacity:0;transform:translate(-50%,10px);}}
+.hero2-cut{position:relative;height:64px;margin-top:-64px;z-index:3;background:var(--bg);clip-path:polygon(0 64px,100% 0,100% 64px,0 64px);}
+
+@media(max-width:900px){
+  .hero2-grid{grid-template-columns:1fr;}
+  .hero2-diagonal{width:100%;clip-path:polygon(0 0,100% 0,100% 78%,0 100%);height:340px;bottom:auto;}
+  .photo-card{max-width:280px;margin:0 auto;}
+  .hero2-hello{font-size:44px;}
+  .hero2-scrollcue{display:none;}
+}
+
+/* SECTION SHELL */
+.section{max-width:1180px;margin:0 auto;padding:1.6rem 2.5rem;}
+.sec-title{font-size:20px;font-weight:700;color:var(--text);margin-bottom:1.1rem;letter-spacing:-0.01em;}
+
+/* ABOUT CARD */
+.about-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.8rem 2rem;display:flex;gap:2rem;align-items:center;}
+.about-text{flex:1;font-size:13.5px;line-height:1.85;color:var(--text-dim);}
+.about-text b{color:var(--text);font-weight:600;}
+.about-text .hl{color:var(--blue);font-weight:600;text-decoration:none;cursor:pointer;border-bottom:1px solid rgba(59,130,246,0.35);transition:border-color 0.2s,color 0.2s;}
+.about-text .hl:hover{color:#60a5fa;border-bottom-color:#60a5fa;}
+.about-illustration{flex-shrink:0;width:150px;height:110px;}
+
+/* SKILL CARDS (was Featured Courses) */
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.3rem 1.1rem;cursor:pointer;transition:border-color 0.2s,transform 0.2s;}
+.skill-card:hover{border-color:rgba(59,130,246,0.35);transform:translateY(-2px);}
+.skill-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;color:#fff;}
+.skill-card h4{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.skill-card p{font-size:11.5px;color:var(--text-faint);line-height:1.6;}
+.view-all-btn{display:block;width:100%;text-align:center;background:var(--blue);color:#fff;font-size:13px;font-weight:600;padding:12px;border-radius:10px;margin-top:14px;cursor:pointer;transition:background 0.2s;}
+.view-all-btn:hover{background:#2563eb;}
+.section-note{font-size:10.5px;color:var(--text-faint);text-align:center;margin-top:10px;line-height:1.6;}
+
+/* PROFICIENCY BARS */
+.prof-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.6rem 1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem;}
+.prof-row{margin-bottom:16px;}
+.prof-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.prof-label{font-size:12.5px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px;}
+.prof-pct{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blue);}
+.prof-track{height:6px;background:rgba(14,26,61,0.07);border-radius:6px;overflow:hidden;}
+.prof-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#1d4ed8,#3b82f6);width:0;transition:width 1.1s cubic-bezier(0.16,1,0.3,1);}
+.prof-icon{width:16px;height:16px;flex-shrink:0;}
+@media(max-width:760px){.prof-card{grid-template-columns:1fr;}}
+
+/* IMPACT CHART */
+.impact-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.8rem 2rem 1.4rem;}
+.impact-chart{display:flex;align-items:flex-end;gap:18px;height:180px;padding:0 4px;margin-bottom:14px;}
+.impact-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+.impact-bar-value{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px;}
+.impact-bar{width:100%;max-width:44px;border-radius:7px 7px 3px 3px;background:linear-gradient(180deg,#3b82f6,#1d4ed8);height:0;transition:height 1.2s cubic-bezier(0.16,1,0.3,1);}
+.impact-bar-label{font-size:9.5px;color:var(--text-faint);margin-top:10px;text-align:center;line-height:1.4;letter-spacing:0.02em;}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px;}
+.timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--blue),rgba(59,130,246,0.05));}
+.tl-item{position:relative;padding-bottom:22px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-dot{position:absolute;left:-28px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;border:2.5px solid var(--blue);}
+.tl-item.current .tl-dot{background:var(--blue);box-shadow:0 0 0 4px var(--blue-soft);}
+.tl-role{font-size:13.5px;font-weight:600;color:var(--text);}
+.tl-co{font-size:12px;color:var(--blue);font-weight:500;}
+.tl-date{font-size:10.5px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;margin-top:2px;margin-bottom:10px;}
+.tl-bullets{list-style:none;}
+.tl-bullets li{font-size:12.5px;color:var(--text-dim);line-height:1.7;padding:3px 0 3px 16px;position:relative;}
+.tl-bullets li::before{content:'→';position:absolute;left:0;color:var(--blue);font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* POPULAR PROJECTS LIST */
+.list-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.list-row{display:flex;gap:18px;align-items:flex-start;padding:16px 22px;border-bottom:1px solid var(--border);cursor:pointer;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1);}
+.list-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue);transform:scaleY(0);transition:transform 0.3s ease;}
+.list-card.in-view .list-row{opacity:1;transform:translateY(0);}
+.list-row:hover{transition:background 0.2s,transform 0.2s;background:rgba(47,91,255,0.05);transform:translateX(4px);}
+.list-row:hover::before{transform:scaleY(1);}
+.list-num{transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),color 0.2s;}
+.list-row:hover .list-num{transform:scale(1.25);color:#1d4ed8;}
+.list-row:last-child{border-bottom:none;}
+.list-num{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--blue);font-weight:700;flex-shrink:0;width:18px;padding-top:1px;}
+.list-body h5{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:4px;}
+.list-body p{font-size:12px;color:var(--text-dim);line-height:1.6;}
+
+/* SUBSCRIBE / CONTACT */
+.contact-band{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2.2rem 2rem;text-align:center;}
+.contact-band h3{font-size:19px;font-weight:700;color:var(--text);margin-bottom:10px;}
+.contact-band p{font-size:13px;color:var(--text-dim);max-width:480px;margin:0 auto 20px;line-height:1.7;}
+.contact-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.contact-input{background:var(--card-alt);border:1px solid var(--border);border-radius:22px;padding:11px 18px;font-size:12.5px;color:var(--text);width:260px;}
+.contact-btn{background:var(--blue);color:#fff;font-size:12.5px;font-weight:600;padding:11px 24px;border-radius:22px;cursor:pointer;transition:background 0.2s;white-space:nowrap;}
+.contact-btn:hover{background:#2563eb;}
+
+/* FOOTER */
+.footer{max-width:1180px;margin:0 auto;padding:1.6rem 2.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-faint);flex-wrap:wrap;gap:10px;}
+.footer-links{display:flex;gap:16px;}
+
+/* PROJECT DETAIL PAGE */
+.proj-detail{max-width:800px;margin:0 auto;padding:2.2rem 2.5rem 3rem;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--blue);cursor:pointer;margin-bottom:1.8rem;}
+.back-btn:hover{opacity:0.8;}
+.detail-tag{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--blue);letter-spacing:0.1em;margin-bottom:10px;opacity:0.8;}
+.detail-title{font-size:28px;font-weight:800;color:var(--text);margin-bottom:1rem;letter-spacing:-0.02em;line-height:1.2;}
+.detail-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;}
+.detail-badge{font-size:11px;font-weight:600;padding:6px 13px;border-radius:14px;background:rgba(22,163,74,0.1);color:#15803d;border:1px solid rgba(22,163,74,0.25);}
+.detail-section{margin-bottom:1.8rem;}
+.detail-sec-label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:0.08em;margin-bottom:12px;}
+.detail-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.5rem;}
+.detail-box p{font-size:13.5px;color:var(--text-dim);line-height:1.8;}
+.detail-box ul{list-style:none;}
+.detail-box ul li{font-size:13.5px;color:var(--text-dim);line-height:1.8;padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;}
+.detail-box ul li:last-child{border-bottom:none;}
+.detail-box ul li::before{content:'→';color:var(--blue);font-family:'JetBrains Mono',monospace;flex-shrink:0;}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+.result-box{background:var(--card);border:1px solid rgba(34,197,94,0.15);border-radius:12px;padding:16px;text-align:center;}
+.result-num{font-size:22px;font-weight:800;color:var(--green);font-family:'JetBrains Mono',monospace;}
+.result-desc{font-size:10.5px;color:var(--text-faint);margin-top:5px;letter-spacing:0.04em;}
+.tool-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.tool-chip{font-size:12px;font-weight:500;padding:7px 14px;border-radius:16px;background:var(--blue-soft);color:#2f5bff;border:1px solid rgba(47,91,255,0.2);}
+
+@media(max-width:760px){
+  .hero{flex-direction:column-reverse;text-align:center;padding-top:1.5rem;}
+  .hero-sub{max-width:none;}
+  .nav-links{display:none;}
+  .skill-grid{grid-template-columns:1fr;}
+  .about-card{flex-direction:column;}
+  .about-illustration{display:none;}
+  .contact-input{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<!-- HOME PAGE -->
+<div class="page active" id="page-home">
+
+<nav class="nav2">
+  <div class="nav2-brand" onclick="showPage('home')">
+    <svg class="nav2-mark" viewBox="0 0 30 30" fill="none"><path d="M15 2 27 9v12L15 28 3 21V9L15 2Z" fill="#0e1a3d"/><path d="M15 2 27 9v12L15 28V2Z" fill="#2f5bff"/><circle cx="15" cy="15" r="5" fill="#fff"/></svg>
+    <div><div class="nav2-name">Uday Chauhan</div><div class="nav2-title">DATA ANALYST</div></div>
+  </div>
+  <div class="nav2-links">
+    <div class="navlink2" onclick="scrollToSection('about-sec')">ABOUT</div>
+    <div class="navlink2" onclick="scrollToSection('projects-sec')">PROJECTS</div>
+    <div class="navlink2" onclick="scrollToSection('exp-sec')">RESUME</div>
+    <div class="navlink2" onclick="scrollToSection('contact-sec')">CONTACT</div>
+  </div>
+</nav>
+
+<div class="hero-wrap">
+  <div class="hero2">
+    <div class="hero2-diagonal">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+    </div>
+    <div class="hero2-grid">
+      <div class="photo-card">
+        <div class="photo-circle"><img src="data:image/jpeg;base64,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" alt="Uday Chauhan"></div>
+        <h3>Uday<br>Chauhan</h3>
+        <div class="p-title">Data Analyst</div>
+        <div class="photo-social">
+          <a href="https://www.linkedin.com/in/uday-chauhan-data" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg></a>
+        </div>
+      </div>
+      <div class="hero2-text">
+        <div class="hero2-hello">Hello.</div>
+        <div class="hero2-role">I'm a Data Analyst<br>Seeking a Full-Time Position</div>
+        <p class="hero2-desc">I'm a data analyst based in Sudbury and Toronto, Ontario, currently working at Variance InfoTech. I build the automation, dashboards, and QA processes that let teams trust their numbers, and I'm actively looking for a full-time analytics or BI role where I can bring that same rigor to a new team.</p>
+        <div class="hero2-btns">
+          <div class="hbtn hbtn-fill" onclick="scrollToSection('exp-sec')">RESUME</div>
+          <div class="hbtn hbtn-outline" onclick="scrollToSection('contact-sec')">CONTACT</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero2-scrollcue"><div class="scrollcue-dot"></div>Scroll to explore</div>
+  </div>
+  <div class="hero2-cut"></div>
+</div>
+
+
+<div class="section" id="about-sec">
+  <div class="about-card">
+    <div class="about-text">
+      Hi, I'm Uday Chauhan, a <b>data analyst</b> at <a class="hl" href="https://www.varianceinfotech.com/" target="_blank" rel="noopener">Variance InfoTech</a>, where I work closely with the product and marketing teams, leveraging <b>SQL</b>, <b>Python</b>, and <b>Power BI</b> to drive data informed decisions around usage and retention.<br><br>
+      While transitioning my career into data, I made a habit of documenting what my automation journey looks like. Since landing my full time role, I've stayed active on <a class="hl" href="https://www.linkedin.com/in/uday-chauhan-data" target="_blank" rel="noopener">LinkedIn</a>, sharing the kind of blueprint focused technical detail that we all wish for early on.<br><br>
+      Outside of my full time role, I also help design QA processes and clean up analytics stacks for small businesses. See <a class="hl" href="#" onclick="scrollToSection('contact-sec');return false;">Get in Touch</a> to work together.
+    </div>
+    <svg class="about-illustration" viewBox="0 0 150 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- stacked database cylinders connected to a chart, representing the analyst's world -->
+      <ellipse cx="42" cy="20" rx="26" ry="9" fill="#1a2130" stroke="#3b82f6" stroke-width="1.6"/>
+      <path d="M16 20v22c0 5 11.6 9 26 9s26-4 26-9V20" stroke="#3b82f6" stroke-width="1.6"/>
+      <path d="M16 31c0 5 11.6 9 26 9s26-4 26-9" stroke="#3b82f6" stroke-width="1.2" opacity="0.5"/>
+      <path d="M16 42c0 5 11.6 9 26 9s26-4 26-9" stroke="#3b82f6" stroke-width="1.2" opacity="0.5"/>
+      <!-- connecting line to chart -->
+      <path d="M68 42 Q 90 42 100 60" stroke="#3b82f6" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.6" fill="none"/>
+      <!-- small bar chart card -->
+      <rect x="86" y="60" width="52" height="46" rx="7" fill="#1a2130" stroke="#3b82f6" stroke-opacity="0.4"/>
+      <rect x="95" y="86" width="7" height="14" rx="2" fill="#3b82f6" opacity="0.55"/>
+      <rect x="107" y="78" width="7" height="22" rx="2" fill="#3b82f6" opacity="0.8"/>
+      <rect x="119" y="70" width="7" height="30" rx="2" fill="#3b82f6"/>
+      <!-- magnifier over the database, representing QA / anomaly detection -->
+      <circle cx="42" cy="45" r="9" fill="none" stroke="#22c55e" stroke-width="1.8"/>
+      <path d="M48.5 51.5 54 57" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
+<div class="section" id="skills-sec">
+  <div class="sec-title">Featured Skills</div>
+  <div class="skill-grid">
+    <div class="skill-card" onclick="scrollToSection('projects-sec')">
+      <div class="skill-icon" style="background:#0ea5e9;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="5" rx="8" ry="3" stroke="#fff" stroke-width="1.6"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <h4>SQL &amp; Data Modeling</h4>
+      <p>Star schema design, query optimization, and stored procedures across SQL Server and Snowflake.</p>
+    </div>
+    <div class="skill-card" onclick="scrollToSection('projects-sec')">
+      <div class="skill-icon" style="background:#eab308;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 3h5a2 2 0 0 1 2 2v3H9a2 2 0 0 0-2 2v3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3V3z" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/><path d="M15 21h-5a2 2 0 0 1-2-2v-3h7a2 2 0 0 0 2-2v-3h3a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-3v2z" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/><circle cx="6.6" cy="6" r=".9" fill="#1a1a1a"/><circle cx="17.4" cy="18" r=".9" fill="#1a1a1a"/></svg>
+      </div>
+      <h4>Python Automation</h4>
+      <p>Pandas driven ETL pipelines, scheduled jobs, and validation scripts that replace manual work.</p>
+    </div>
+    <div class="skill-card" onclick="scrollToSection('projects-sec')">
+      <div class="skill-icon" style="background:#22c55e;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="12" width="4" height="8" rx="1" fill="#062b12"/><rect x="10" y="7" width="4" height="13" rx="1" fill="#062b12"/><rect x="16" y="3" width="4" height="17" rx="1" fill="#062b12"/></svg>
+      </div>
+      <h4>Power BI &amp; Looker Studio</h4>
+      <p>Dashboards and DAX measures built for consistency across finance, ops, and regional stakeholders.</p>
+    </div>
+  </div>
+  <div class="view-all-btn" onclick="scrollToSection('projects-sec')">View All Projects</div>
+  <div class="section-note">Full toolkit also includes GA4, BigQuery, Microsoft Fabric, Azure, and C# .NET. If you'd like a walkthrough of any project, reach out and I'll send a short demo.</div>
+</div>
+
+<div class="section" id="proficiency-sec">
+  <div class="sec-title">Tool Proficiency</div>
+  <div class="prof-card" id="prof-card">
+    <div>
+      <div class="prof-row">
+        <div class="prof-top"><span class="prof-label"><svg class="prof-icon" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="5" rx="8" ry="3" stroke="#3b82f6" stroke-width="1.8"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round"/></svg>SQL</span><span class="prof-pct">95%</span></div>
+        <div class="prof-track"><div class="prof-fill" data-pct="95"></div></div>
+      </div>
+      <div class="prof-row">
+        <div class="prof-top"><span class="prof-label"><svg class="prof-icon" viewBox="0 0 24 24" fill="none"><path d="M9 3h5a2 2 0 0 1 2 2v3H9a2 2 0 0 0-2 2v3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3V3z" stroke="#3b82f6" stroke-width="1.5" stroke-linejoin="round"/><path d="M15 21h-5a2 2 0 0 1-2-2v-3h7a2 2 0 0 0 2-2v-3h3a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-3v2z" stroke="#3b82f6" stroke-width="1.5" stroke-linejoin="round"/></svg>Python</span><span class="prof-pct">90%</span></div>
+        <div class="prof-track"><div class="prof-fill" data-pct="90"></div></div>
+      </div>
+      <div class="prof-row">
+        <div class="prof-top"><span class="prof-label"><svg class="prof-icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="12" width="4" height="8" rx="1" fill="#3b82f6"/><rect x="10" y="7" width="4" height="13" rx="1" fill="#3b82f6"/><rect x="16" y="3" width="4" height="17" rx="1" fill="#3b82f6"/></svg>Power BI</span><span class="prof-pct">88%</span></div>
+        <div class="prof-track"><div class="prof-fill" data-pct="88"></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="prof-row">
+        <div class="prof-top"><span class="prof-label"><svg class="prof-icon" viewBox="0 0 24 24" fill="none"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" stroke="#3b82f6" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12h6M9 16h6" stroke="#3b82f6" stroke-width="1.6" stroke-linecap="round"/></svg>QA Testing</span><span class="prof-pct">85%</span></div>
+        <div class="prof-track"><div class="prof-fill" data-pct="85"></div></div>
+      </div>
+      <div class="prof-row">
+        <div class="prof-top"><span class="prof-label"><svg class="prof-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4z" stroke="#3b82f6" stroke-width="1.6" stroke-linejoin="round"/></svg>Azure &amp; Fabric</span><span class="prof-pct">78%</span></div>
+        <div class="prof-track"><div class="prof-fill" data-pct="78"></div></div>
+      </div>
+      <div class="prof-row">
+        <div class="prof-top"><span class="prof-label"><svg class="prof-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#3b82f6" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="#3b82f6" stroke-width="1.6" stroke-linecap="round"/></svg>ETL Pipelines</span><span class="prof-pct">92%</span></div>
+        <div class="prof-track"><div class="prof-fill" data-pct="92"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="impact-sec">
+  <div class="sec-title">Impact at a Glance</div>
+  <div class="impact-card" id="impact-card">
+    <div class="impact-chart">
+      <div class="impact-bar-wrap"><div class="impact-bar-value">4 hrs</div><div class="impact-bar" data-h="60"></div><div class="impact-bar-label">Saved weekly<br>via automation</div></div>
+      <div class="impact-bar-wrap"><div class="impact-bar-value">14→8</div><div class="impact-bar" data-h="75"></div><div class="impact-bar-label">Reports<br>consolidated</div></div>
+      <div class="impact-bar-wrap"><div class="impact-bar-value">11</div><div class="impact-bar" data-h="90"></div><div class="impact-bar-label">Defects caught<br>pre-release</div></div>
+      <div class="impact-bar-wrap"><div class="impact-bar-value">5</div><div class="impact-bar" data-h="45"></div><div class="impact-bar-label">Systems<br>integrated</div></div>
+      <div class="impact-bar-wrap"><div class="impact-bar-value">10K+</div><div class="impact-bar" data-h="100"></div><div class="impact-bar-label">Data points<br>processed weekly</div></div>
+      <div class="impact-bar-wrap"><div class="impact-bar-value">8%</div><div class="impact-bar" data-h="30"></div><div class="impact-bar-label">Undercount<br>identified &amp; fixed</div></div>
+    </div>
+    <div class="section-note" style="margin-top:0;">Figures pulled from the six projects below — click any one for the full breakdown.</div>
+  </div>
+</div>
+
+<div class="section" id="projects-sec">
+  <div class="sec-title">Popular Projects</div>
+  <div class="list-card">
+    <div class="list-row" onclick="showProject('p1')"><div class="list-num">1</div><div class="list-body"><h5>Reporting Workflow Automation</h5><p>6 manual reports rebuilt in Python and SQL, saving 4 hours weekly and delivering same day.</p></div></div>
+    <div class="list-row" onclick="showProject('p2')"><div class="list-num">2</div><div class="list-body"><h5>Power BI Dashboard Consolidation</h5><p>14 overlapping reports consolidated into 8, serving 12 daily stakeholders with a clean data model.</p></div></div>
+    <div class="list-row" onclick="showProject('p3')"><div class="list-num">3</div><div class="list-body"><h5>Business System Release QA Process</h5><p>Structured QA process built from scratch, catching 11 defects before release in the first 6 months.</p></div></div>
+    <div class="list-row" onclick="showProject('p4')"><div class="list-num">4</div><div class="list-body"><h5>Multi-Source Data Integration Pipeline</h5><p>5 systems connected into one pipeline, replacing a manual reconciliation done by 3 people.</p></div></div>
+    <div class="list-row" onclick="showProject('p5')"><div class="list-num">5</div><div class="list-body"><h5>Google Client Retail Analytics</h5><p>Weekly data prep cut from half a day to 20 minutes across 10,000+ data points for Google's retail program.</p></div></div>
+    <div class="list-row" onclick="showProject('p6')"><div class="list-num">6</div><div class="list-body"><h5>Anomaly Detection and Root Cause Fix</h5><p>Traced and fixed an 8% weekly undercount in compliance figures found during routine review.</p></div></div>
+  </div>
+</div>
+
+<div class="section" id="exp-sec">
+  <div class="sec-title">Experience</div>
+  <div class="list-card" style="padding:1.8rem 2rem;">
+    <div class="timeline">
+      <div class="tl-item current">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Data Analyst</div>
+        <div class="tl-co">Variance InfoTech</div>
+        <div class="tl-date">NOV 2023 – PRESENT</div>
+        <ul class="tl-bullets">
+          <li>Rebuilt 6 manual reporting workflows in Python and SQL Server, saving 4 hours of analyst time weekly and moving delivery from multi-day to same-day</li>
+          <li>Audited and consolidated 14 overlapping Power BI reports into 8, rebuilding the data model on proper star schema principles for 12 daily stakeholders across operations and finance</li>
+          <li>Designed a structured QA process from scratch, including test case templates and a defect log format, catching 11 pre-release defects across 2 full release cycles</li>
+          <li>Built a Python ETL pipeline connecting 5 separate source systems into one SQL Server destination, replacing a manual reconciliation previously done by 3 people</li>
+          <li>Caught an 8% weekly undercount in compliance figures during routine review, traced it to a data collection logic error, and worked with the technical team to fix it</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Homecare Service Representative</div>
+        <div class="tl-co">Medigas (Linde CA)</div>
+        <div class="tl-date">APR 2025 – MAR 2026</div>
+        <ul class="tl-bullets">
+          <li>Coordinated home oxygen and respiratory equipment delivery and setup for patients, working directly with clinical teams to schedule service around care plans</li>
+          <li>Maintained accurate patient and equipment service records, flagging discrepancies before they became compliance issues</li>
+          <li>Handled patient and family communication with attention to detail, carrying the same documentation discipline from data analytics into a clinical service setting</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Data Analyst</div>
+        <div class="tl-co">Smollan · Google</div>
+        <div class="tl-date">OCT 2022 – JUL 2023</div>
+        <ul class="tl-bullets">
+          <li>Built an ETL pipeline pulling from 3 field collection systems for a Google retail execution program, feeding a reporting environment used by 8 regional directors</li>
+          <li>Automated weekly data cleaning and prep across 10,000+ data points, cutting a half-day manual process for 2 analysts down to 20 minutes unattended</li>
+          <li>Wrote BigQuery queries and built Looker Studio dashboards surfacing trends not visible in standard summary reports</li>
+          <li>Ran structured QA across 2 reporting system release cycles, catching 7 defects before they reached the client</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Junior .NET Developer and Data Analytics Intern</div>
+        <div class="tl-co">Variance InfoTech</div>
+        <div class="tl-date">JAN 2022 – OCT 2022</div>
+        <ul class="tl-bullets">
+          <li>Supported development and maintenance of internal C# .NET applications alongside senior developers</li>
+          <li>Assisted with early data analytics work, building foundational SQL and Power BI skills that shaped the analyst role that followed</li>
+          <li>Wrote and maintained SQL queries to support internal reporting needs during the transition from a pure development track into analytics</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Junior Software Developer</div>
+        <div class="tl-co">KeenExpert Solution</div>
+        <div class="tl-date">APR 2021 – NOV 2021</div>
+        <ul class="tl-bullets">
+          <li>Contributed to feature development and bug fixes on client software projects under senior developer guidance</li>
+          <li>Gained early experience with structured debugging and version control practices in a professional codebase</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="contact-sec">
+  <div class="contact-band">
+    <h3>Let's talk data</h3>
+    <p>Open to analytics and BI roles across Ontario. If you'd like to see a project walkthrough or just want to connect, drop a note below or reach me directly.</p>
+    <div class="contact-row">
+      <input class="contact-input" type="email" placeholder="udaychauhan.data@gmail.com" disabled>
+      <div class="contact-btn" onclick="window.location.href='mailto:udaychauhan.data@gmail.com'">Email Me</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div>© Uday Chauhan · Sudbury / Toronto, ON</div>
+  <div class="footer-links">
+    <span>+1 (249) 979-0437</span>
+    <span>linkedin.com/in/uday-chauhan-data</span>
+  </div>
+</div>
+
+</div>
+
+<!-- PROJECT DETAIL PAGES -->
+<div class="page" id="page-p1">
+<nav><div class="logo" onclick="showPage('home')"><div class="logo-mark">UC</div>Uday Chauhan</div><div class="nav-links"><div class="nav-link" onclick="showPage('home')">Home</div></div><div class="nav-cta" onclick="scrollToSection('contact-sec')">Get in touch</div></nav>
+<div class="proj-detail">
+  <div class="back-btn" onclick="showPage('home')">← Back to home</div>
+  <div class="detail-tag">PROJECT 01 · AUTOMATION</div>
+  <div class="detail-title">Reporting Workflow Automation</div>
+  <div class="detail-badges"><span class="detail-badge">4 hrs saved weekly</span><span class="detail-badge">Same-day delivery</span><span class="detail-badge">6 workflows rebuilt</span></div>
+  <div class="detail-section"><div class="detail-sec-label">THE PROBLEM</div><div class="detail-box"><p>When I joined Variance InfoTech there were 6 recurring reports that an analyst was producing manually every week. Each one involved opening source files, copying data into Excel, running formulas, formatting, and emailing outputs. The process was eating up roughly 4 hours of analyst time weekly and producing inconsistent results because different people handled it differently depending on who was available.</p></div></div>
+  <div class="detail-section"><div class="detail-sec-label">WHAT I BUILT</div><div class="detail-box"><ul><li>Analysed each of the 6 workflows individually to understand the data sources, transformation logic, and output format required</li><li>Wrote Python scripts using pandas for each workflow that pulled data from SQL Server, applied all transformation and cleaning logic, and generated formatted output files automatically</li><li>Set up SQL Server scheduled jobs to trigger each Python script at the right time overnight so outputs were ready by 7am</li><li>Built error handling and logging into each script so failures would surface immediately rather than silently producing wrong outputs</li><li>Documented each workflow so any team member could maintain or modify it without asking me</li></ul></div></div>
+  <div class="detail-section"><div class="detail-sec-label">RESULTS</div><div class="result-grid"><div class="result-box"><div class="result-num">4 hrs</div><div class="result-desc">SAVED WEEKLY</div></div><div class="result-box"><div class="result-num">6</div><div class="result-desc">WORKFLOWS AUTOMATED</div></div><div class="result-box"><div class="result-num">Same-day</div><div class="result-desc">DELIVERY ACHIEVED</div></div></div></div>
+  <div class="detail-section"><div class="detail-sec-label">TOOLS USED</div><div class="tool-grid"><span class="tool-chip">Python</span><span class="tool-chip">pandas</span><span class="tool-chip">SQL Server</span><span class="tool-chip">SQL Scheduled Jobs</span><span class="tool-chip">Advanced Excel</span><span class="tool-chip">Power BI</span></div></div>
+</div></div>
+
+<div class="page" id="page-p2">
+<nav><div class="logo" onclick="showPage('home')"><div class="logo-mark">UC</div>Uday Chauhan</div><div class="nav-links"><div class="nav-link" onclick="showPage('home')">Home</div></div><div class="nav-cta" onclick="scrollToSection('contact-sec')">Get in touch</div></nav>
+<div class="proj-detail">
+  <div class="back-btn" onclick="showPage('home')">← Back to home</div>
+  <div class="detail-tag">PROJECT 02 · REPORTING</div>
+  <div class="detail-title">Power BI Dashboard Consolidation</div>
+  <div class="detail-badges"><span class="detail-badge">14 reports to 8</span><span class="detail-badge">12 daily users</span><span class="detail-badge">Data model restructured</span></div>
+  <div class="detail-section"><div class="detail-sec-label">THE PROBLEM</div><div class="detail-box"><p>I inherited a Power BI environment with 14 overlapping reports built by multiple contributors over 2 years. The data model had grown inconsistent, DAX measures were duplicated across reports with slightly different logic, and stakeholders were asking clarifying questions about the numbers every week because different reports showed different figures for the same metrics. Nobody fully trusted what they were looking at.</p></div></div>
+  <div class="detail-section"><div class="detail-sec-label">WHAT I BUILT</div><div class="detail-box"><ul><li>Audited all 14 reports to understand which were actively used, which were duplicates, and which could be safely retired</li><li>Restructured the underlying data model following proper star schema principles with clear fact and dimension tables</li><li>Rewrote all DAX measures with consistent logic and naming conventions so the same metric always shows the same number regardless of which report surfaces it</li><li>Consolidated 14 reports into 8 well structured ones covering all the same use cases without the redundancy</li><li>Presented the consolidated suite to 12 regular users across operations and finance and incorporated their feedback before final release</li></ul></div></div>
+  <div class="detail-section"><div class="detail-sec-label">RESULTS</div><div class="result-grid"><div class="result-box"><div class="result-num">14 → 8</div><div class="result-desc">REPORTS CONSOLIDATED</div></div><div class="result-box"><div class="result-num">12</div><div class="result-desc">DAILY ACTIVE USERS</div></div><div class="result-box"><div class="result-num">Zero</div><div class="result-desc">DATA TRUST ISSUES</div></div></div></div>
+  <div class="detail-section"><div class="detail-sec-label">TOOLS USED</div><div class="tool-grid"><span class="tool-chip">Power BI</span><span class="tool-chip">DAX</span><span class="tool-chip">Power Query</span><span class="tool-chip">SQL Server</span><span class="tool-chip">Star Schema Design</span><span class="tool-chip">Data Modeling</span></div></div>
+</div></div>
+
+<div class="page" id="page-p3">
+<nav><div class="logo" onclick="showPage('home')"><div class="logo-mark">UC</div>Uday Chauhan</div><div class="nav-links"><div class="nav-link" onclick="showPage('home')">Home</div></div><div class="nav-cta" onclick="scrollToSection('contact-sec')">Get in touch</div></nav>
+<div class="proj-detail">
+  <div class="back-btn" onclick="showPage('home')">← Back to home</div>
+  <div class="detail-tag">PROJECT 03 · QA TESTING</div>
+  <div class="detail-title">Business System Release QA Process</div>
+  <div class="detail-badges"><span class="detail-badge">11 defects caught pre-release</span><span class="detail-badge">Built from scratch</span><span class="detail-badge">Zero post-release complaints</span></div>
+  <div class="detail-section"><div class="detail-sec-label">THE PROBLEM</div><div class="detail-box"><p>Business system updates were going live without structured testing. Defects were being discovered by end users after deployment, requiring reactive fixes mid-cycle with the disruption and rework cost that comes with that. There was no documented test process, no test cases, and no consistent way to track what had been checked and what had not before a release went out.</p></div></div>
+  <div class="detail-section"><div class="detail-sec-label">WHAT I BUILT</div><div class="detail-box"><ul><li>Designed a structured QA process covering the full release cycle from requirements review through to sign-off</li><li>Wrote test case templates that mapped each feature or change to specific validation steps a tester could execute and record</li><li>Built a defect log format that captured enough detail for developers to reproduce and fix issues without back and forth clarification</li><li>Established a sign-off checklist that had to be completed before any release was approved to go live</li><li>Ran the process across 2 full release cycles, refining it based on what the team found easy or difficult to follow</li></ul></div></div>
+  <div class="detail-section"><div class="detail-sec-label">RESULTS</div><div class="result-grid"><div class="result-box"><div class="result-num">11</div><div class="result-desc">DEFECTS CAUGHT PRE-RELEASE</div></div><div class="result-box"><div class="result-num">2</div><div class="result-desc">FULL RELEASE CYCLES</div></div><div class="result-box"><div class="result-num">Zero</div><div class="result-desc">POST-RELEASE COMPLAINTS</div></div></div></div>
+  <div class="detail-section"><div class="detail-sec-label">TOOLS USED</div><div class="tool-grid"><span class="tool-chip">QA Test Planning</span><span class="tool-chip">Test Case Development</span><span class="tool-chip">Defect Documentation</span><span class="tool-chip">UAT</span><span class="tool-chip">Release Validation</span><span class="tool-chip">Excel</span></div></div>
+</div></div>
+
+<div class="page" id="page-p4">
+<nav><div class="logo" onclick="showPage('home')"><div class="logo-mark">UC</div>Uday Chauhan</div><div class="nav-links"><div class="nav-link" onclick="showPage('home')">Home</div></div><div class="nav-cta" onclick="scrollToSection('contact-sec')">Get in touch</div></nav>
+<div class="proj-detail">
+  <div class="back-btn" onclick="showPage('home')">← Back to home</div>
+  <div class="detail-tag">PROJECT 04 · DATA PIPELINE</div>
+  <div class="detail-title">Multi-Source Data Integration Pipeline</div>
+  <div class="detail-badges"><span class="detail-badge">5 systems connected</span><span class="detail-badge">3 people replaced</span><span class="detail-badge">Consistent daily output</span></div>
+  <div class="detail-section"><div class="detail-sec-label">THE PROBLEM</div><div class="detail-box"><p>Data needed for weekly reporting lived in 5 separate systems: SQL Server tables, Excel files, a cloud CRM, and two external data feeds. Three people were manually pulling from each source, reconciling discrepancies, and combining the outputs every week. The process took hours and produced slightly different results depending on who ran it and in what order they pulled the sources.</p></div></div>
+  <div class="detail-section"><div class="detail-sec-label">WHAT I BUILT</div><div class="detail-box"><ul><li>Mapped all 5 source systems, understanding the data structure, update frequency, and business logic needed for each</li><li>Built a Python ETL pipeline that pulled from all 5 sources automatically, applied transformation and reconciliation logic, and loaded clean output into a single SQL Server destination table</li><li>Added data validation checks at each stage to catch missing values, duplicates, or out of range figures before they reached the output</li><li>Scheduled the pipeline to run nightly so the combined dataset was ready every morning without any manual intervention</li><li>Documented the pipeline architecture and transformation logic so it could be maintained or extended by any technical team member</li></ul></div></div>
+  <div class="detail-section"><div class="detail-sec-label">RESULTS</div><div class="result-grid"><div class="result-box"><div class="result-num">5</div><div class="result-desc">SOURCES CONNECTED</div></div><div class="result-box"><div class="result-num">3</div><div class="result-desc">PEOPLE REPLACED</div></div><div class="result-box"><div class="result-num">100%</div><div class="result-desc">CONSISTENT OUTPUT</div></div></div></div>
+  <div class="detail-section"><div class="detail-sec-label">TOOLS USED</div><div class="tool-grid"><span class="tool-chip">Python</span><span class="tool-chip">pandas</span><span class="tool-chip">SQL Server</span><span class="tool-chip">Snowflake</span><span class="tool-chip">ETL Design</span><span class="tool-chip">Data Validation</span><span class="tool-chip">Azure</span></div></div>
+</div></div>
+
+<div class="page" id="page-p5">
+<nav><div class="logo" onclick="showPage('home')"><div class="logo-mark">UC</div>Uday Chauhan</div><div class="nav-links"><div class="nav-link" onclick="showPage('home')">Home</div></div><div class="nav-cta" onclick="scrollToSection('contact-sec')">Get in touch</div></nav>
+<div class="proj-detail">
+  <div class="back-btn" onclick="showPage('home')">← Back to home</div>
+  <div class="detail-tag">PROJECT 05 · ANALYTICS</div>
+  <div class="detail-title">Google Client Retail Analytics</div>
+  <div class="detail-badges"><span class="detail-badge">Half-day to 20 min</span><span class="detail-badge">10,000+ data points weekly</span><span class="detail-badge">7 defects caught in QA</span></div>
+  <div class="detail-section"><div class="detail-sec-label">THE PROBLEM</div><div class="detail-box"><p>At Smollan, supporting a Google retail execution program in the Indian market, analytics and reporting for 10,000+ weekly data points across field compliance, sales performance, and campaign execution was being handled manually. Two analysts were spending half a day each week just preparing data before any analysis could begin. The reporting system was also being updated without structured testing, and defects were reaching the client.</p></div></div>
+  <div class="detail-section"><div class="detail-sec-label">WHAT I BUILT</div><div class="detail-box"><ul><li>Built an ETL pipeline pulling from 3 field collection systems, cleaning and validating incoming records, and loading structured output into the reporting environment used by 8 regional directors</li><li>Automated the weekly data cleaning and preparation process that had previously taken 2 analysts half a day, reducing it to 20 minutes of unattended runtime</li><li>Built BigQuery based analytical queries that surfaced trends and anomalies not visible in standard summary reports</li><li>Created Looker Studio dashboards connecting multiple data sources into clear weekly performance summaries for regional leadership</li><li>Conducted structured QA testing across 2 reporting system release cycles, catching 7 defects before they reached the client</li></ul></div></div>
+  <div class="detail-section"><div class="detail-sec-label">RESULTS</div><div class="result-grid"><div class="result-box"><div class="result-num">20 min</div><div class="result-desc">DOWN FROM HALF-DAY</div></div><div class="result-box"><div class="result-num">10K+</div><div class="result-desc">WEEKLY DATA POINTS</div></div><div class="result-box"><div class="result-num">7</div><div class="result-desc">DEFECTS CAUGHT IN QA</div></div></div></div>
+  <div class="detail-section"><div class="detail-sec-label">TOOLS USED</div><div class="tool-grid"><span class="tool-chip">Google BigQuery</span><span class="tool-chip">Looker Studio</span><span class="tool-chip">GA4</span><span class="tool-chip">Python</span><span class="tool-chip">SQL</span><span class="tool-chip">ETL Pipelines</span><span class="tool-chip">QA Testing</span></div></div>
+</div></div>
+
+<div class="page" id="page-p6">
+<nav><div class="logo" onclick="showPage('home')"><div class="logo-mark">UC</div>Uday Chauhan</div><div class="nav-links"><div class="nav-link" onclick="showPage('home')">Home</div></div><div class="nav-cta" onclick="scrollToSection('contact-sec')">Get in touch</div></nav>
+<div class="proj-detail">
+  <div class="back-btn" onclick="showPage('home')">← Back to home</div>
+  <div class="detail-tag">PROJECT 06 · DATA QUALITY</div>
+  <div class="detail-title">Anomaly Detection and Root Cause Fix</div>
+  <div class="detail-badges"><span class="detail-badge">8% undercount identified</span><span class="detail-badge">Root cause traced</span><span class="detail-badge">Protocol changed</span></div>
+  <div class="detail-section"><div class="detail-sec-label">THE PROBLEM</div><div class="detail-box"><p>During routine data quality review of weekly compliance figures for the Google retail program, I noticed that one product category was consistently showing lower compliance numbers than field reports suggested. The gap was small enough that it had not triggered any alerts, but it was appearing week after week in the same direction, which suggested a systematic issue rather than random variation.</p></div></div>
+  <div class="detail-section"><div class="detail-sec-label">WHAT I BUILT</div><div class="detail-box"><ul><li>Ran SQL and Python queries to isolate the affected product category and compare figures across all data sources feeding into the compliance metric</li><li>Traced the discrepancy back to a logic error in the field data collection form that was causing a specific type of compliance action to be recorded in the wrong category</li><li>Documented the issue with specific examples, affected record counts, and the business impact of the undercount on how the region was evaluating that category</li><li>Worked with the technical team to correct the collection logic and validated the fix against historical records</li><li>Presented findings to client stakeholders in a format that explained both the technical cause and the business implication clearly</li></ul></div></div>
+  <div class="detail-section"><div class="detail-sec-label">RESULTS</div><div class="result-grid"><div class="result-box"><div class="result-num">8%</div><div class="result-desc">WEEKLY UNDERCOUNT FIXED</div></div><div class="result-box"><div class="result-num">1</div><div class="result-desc">PROTOCOL CHANGED</div></div><div class="result-box"><div class="result-num">Zero</div><div class="result-desc">RECURRENCE AFTER FIX</div></div></div></div>
+  <div class="detail-section"><div class="detail-sec-label">TOOLS USED</div><div class="tool-grid"><span class="tool-chip">Python</span><span class="tool-chip">SQL</span><span class="tool-chip">Data Validation</span><span class="tool-chip">Root Cause Analysis</span><span class="tool-chip">BigQuery</span><span class="tool-chip">Stakeholder Reporting</span></div></div>
+</div></div>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo(0,0);
+  if(id==='home'){document.querySelector('.nav-link.active')?.classList.remove('active');document.querySelector('.nav-link')?.classList.add('active');}
+}
+function showProject(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function scrollToSection(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+
+/* Animate proficiency bars and impact chart bars when they scroll into view */
+const animTargets = [
+  {id:'prof-card', run:(card)=>{
+    card.querySelectorAll('.prof-fill').forEach(el=>{ el.style.width = el.dataset.pct + '%'; });
+  }},
+  {id:'impact-card', run:(card)=>{
+    card.querySelectorAll('.impact-bar').forEach(el=>{ el.style.height = el.dataset.h + '%'; });
+  }}
+];
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const target = animTargets.find(t=>t.id===entry.target.id);
+      if(target){ target.run(entry.target); }
+      io.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.3});
+animTargets.forEach(t=>{
+  const el = document.getElementById(t.id);
+  if(el){ io.observe(el); }
+});
+
+/* Staggered reveal for project & experience list rows when their card scrolls into view */
+const listIo = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const card = entry.target;
+      const rows = card.querySelectorAll('.list-row');
+      rows.forEach((row,i)=>{
+        row.style.transitionDelay = (i*70) + 'ms';
+      });
+      card.classList.add('in-view');
+      // clear the delay once the entrance finishes so hover stays snappy
+      setTimeout(()=>{ rows.forEach(row=>{ row.style.transitionDelay=''; }); }, rows.length*70 + 650);
+      listIo.unobserve(card);
+    }
+  });
+}, {threshold:0.15});
+document.querySelectorAll('.list-card').forEach(card=>{ listIo.observe(card); });
+</script>
+</body>
+</html>
